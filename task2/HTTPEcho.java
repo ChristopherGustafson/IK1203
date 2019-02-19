@@ -13,6 +13,7 @@ public class HTTPEcho{
       DataOutputStream output = new DataOutputStream(connection.getOutputStream());
       StringBuilder sb = new StringBuilder(HTTPHeader);
       String s = "";
+
       while((s = input.readLine()) != null && s.length() != 0){
         sb.append(s + "\n");
       }
