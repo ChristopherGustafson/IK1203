@@ -24,7 +24,6 @@ public class MyRunnable implements Runnable{
   }
 
   public void run(){
-    System.out.println("New runnable");
     try{
       BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
       DataOutputStream output = new DataOutputStream(connection.getOutputStream());
@@ -54,9 +53,6 @@ public class MyRunnable implements Runnable{
             data = parameters[++i];
           }
         }
-
-        System.out.println("Host: " + host);
-        System.out.println("Port: " + port);
 
         if(parameters[1].equals("/ask") && host != null && port != null){
 

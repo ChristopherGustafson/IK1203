@@ -57,7 +57,7 @@ public class TCPClient {
 
       //Initiate maxLine variables
       int count = 0;
-      //int maxLineCount = 100;
+      int maxLineCount = 100;
 
       try{
 
@@ -66,9 +66,9 @@ public class TCPClient {
         BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
         //Read lines from server and append to StringBuilder until null is read or the max line count is reached
-        while(((s = input.readLine()) != null)/* && count <= maxLineCount*/){
+        while(((s = input.readLine()) != null) && count <= maxLineCount){
           sb.append(s + '\n');
-          //count++;
+          count++;
         }
 
         //Close socket and return string representation of the StringBuilder
